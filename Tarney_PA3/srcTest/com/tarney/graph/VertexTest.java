@@ -54,5 +54,13 @@ public class VertexTest {
 		assertEquals(vertex.getColor(), "black");
 	}
 	
+	@Test
+	public void testParent() {
+		vertex.addParent(new Vertex('a'));
+		vertex.addParent(new Vertex('z'));;
+		assertEquals(vertex.getLastParent().getValue(), 'z');
+		assertEquals(vertex.getLastParent().getValue(), 'a');
+	}
+	
 	
 }

@@ -15,12 +15,14 @@
 package com.tarney.graph;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Vertex {
 
 	private char nodeValue;
 	private ArrayList<Vertex> adjacenyList = new ArrayList<>();
 	private String color;
+	private Stack<Vertex> parents = new Stack<>();
 	
 	public Vertex (char nodeValue) {
 		this.nodeValue = nodeValue;
@@ -36,6 +38,25 @@ public class Vertex {
 	public char getValue() {
 		return nodeValue;
 	}
+	
+	public void addParent(Vertex parent) {
+		this.parents.add(parent);
+	}
+	
+	/*
+	 * This node may be added to a stack multiple times because of several in-edges: each time we will track its parent
+	 * or the vertex from which this edge comes so we can later classify each edge
+	 */
+	public Vertex getLastParent() {
+		return parents.pop();
+	}
+
+	//delete any existing parents
+	public void newParents() {
+		this.parents = new Stack<>();
+	}
+
+
 	
 	public void setAdjacencyList(ArrayList<Vertex> adjList) {
 		this.adjacenyList = adjList;
