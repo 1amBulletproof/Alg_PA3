@@ -12,6 +12,9 @@ public class MainStackDFS {
 	public static void main(String[] args) {
 		
 		System.out.println("Is this thing on?");
+		//test
+		
+		System.out.println("test");
 
 	}
 
