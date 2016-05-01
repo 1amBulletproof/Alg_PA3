@@ -37,6 +37,10 @@ public class Vertex {
 		return nodeValue;
 	}
 	
+	public void setAdjacencyList(ArrayList<Vertex> adjList) {
+		this.adjacenyList = adjList;
+	}
+	
 	public ArrayList<Vertex> getAdjacencyList() {
 		return adjacenyList;
 	}

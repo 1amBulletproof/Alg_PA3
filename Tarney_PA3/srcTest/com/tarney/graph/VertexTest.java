@@ -41,6 +41,10 @@ public class VertexTest {
 	public void testAdjacencyList() {
 		assertEquals(vertex.getAdjacencyList().get(0).getValue(), 'b');
 		assertEquals(vertex.getAdjacencyList().get(1).getValue(), 'c');
+		adjacencyList = new ArrayList<>();
+		adjacencyList.add(new Vertex('z'));
+		vertex.setAdjacencyList(adjacencyList);
+		assertEquals(vertex.getAdjacencyList().get(0).getValue(), 'z');
 	}
 	
 	@Test
