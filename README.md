@@ -1,5 +1,5 @@
 # Alg_PA3 ReadMe
-605.421 Algorithms Programming Assignment 3: Replace recursion in a DFS algorithm with a stack
+605.421 Algorithms Programming Assignment 3: Replace recursion in a DFS algorithm with a stack & print the edges
 
 ## Assignment Details:
 - Assignment: **JHU Algorithms 605.421 Programming Assignment 3**
