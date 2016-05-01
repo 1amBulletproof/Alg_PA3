@@ -64,7 +64,7 @@ public class DepthFirstSearchAlgorithm {
 				
 			}
 			else {
-				System.out.println(displayEdge(vertex, node) + " Ether a forward edge of a cross edge");
+				System.out.println(displayEdge(vertex, node) + " Ether a forward edge or a cross edge");
 			}
 		}
 		vertex.setColor("black"); //node has been visited as has all its adjacent nodes
