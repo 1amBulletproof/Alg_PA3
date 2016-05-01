@@ -21,7 +21,7 @@ public class MainStackDFS {
 		
 		printGraph(graph);
 		
-		System.out.println("\nGraph Depth First Search");
+		System.out.println("\n---Graph Depth First Search---\n");
 		
 		depthFirstSearch(graph);
 		
@@ -37,7 +37,7 @@ public class MainStackDFS {
 				System.out.print(v.getValue() + " ");
 			}
 		}
-		System.out.println("\n\n---GRAPH PRINT END---");
+		System.out.println("\n\n---GRAPH PRINT END---\n\n");
 	}
 	
 	/*
