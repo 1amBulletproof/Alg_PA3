@@ -9,6 +9,8 @@ package com.tarney.main;
 
 import java.util.ArrayList;
 
+import static com.tarney.depthFirstSearch.DepthFirstSearchAlgorithm.*;
+
 import com.tarney.graph.Vertex;
 
 public class MainStackDFS {
@@ -19,9 +21,10 @@ public class MainStackDFS {
 		
 		printGraph(graph);
 		
+		System.out.println("\nGraph Depth First Search");
 		
+		depthFirstSearch(graph);
 		
-
 	}
 
 	//Print the nodes and connections of a graph to console
@@ -52,13 +55,13 @@ public class MainStackDFS {
 		Vertex yVertex = new Vertex('y');
 		Vertex zVertex = new Vertex('z');
 		
-		Vertex[] uAdjacencyList = {vVertex, xVertex};
+		Vertex[] uAdjacencyList = {xVertex, vVertex};
 		uVertex.setAdjacencyList(createArrayList( uAdjacencyList ));
 		
 		Vertex[] vAdjacencyList = {yVertex};
 		vVertex.setAdjacencyList(createArrayList( vAdjacencyList ));
 		
-		Vertex[] wAdjacencyList = {yVertex, zVertex};
+		Vertex[] wAdjacencyList = {zVertex, yVertex};
 		wVertex.setAdjacencyList(createArrayList( wAdjacencyList ));
 		
 		Vertex[] xAdjacencyList = {vVertex};
