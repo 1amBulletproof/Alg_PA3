@@ -18,8 +18,6 @@
 1. **How-to run:**  run the main() in "MainStackDFS.java"
 1. **Input:** Hard-coded graph creation, see method "initializeGraph()" in "MainStackDFS.java"
 1. **Output:** Prints to Console Description of Graph and then description of Depth First Search
-
-
 1. **Unit tests:**
   - Unit tests require JUnit 4 & Hamcrest
 1. Program was created in eclipse as a Java project, see [the github repo for a copy](https://github.com/1amBulletproof/Alg_PA3)
