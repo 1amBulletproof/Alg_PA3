@@ -35,20 +35,19 @@ public class DepthFirstSearchAlgorithm {
 		for ( Vertex vertex: graph) {
 			
 			if (vertex.getColor().equals("white")) {
-				System.out.println("visiting: " + vertex.getValue());
 				stack = depthFirstSearchVisit( vertex, stack);
 				
 				while (!stack.empty()) {
 					childVertex = stack.pop();
-					
+
 					if (childVertex.getColor().equals("white")) {
-						System.out.println(displayEdge(childVertex.getLastParent(), childVertex) + " is a tree edge");
-						System.out.println("visiting: " + childVertex.getValue());
-						stack = depthFirstSearchVisit( childVertex, stack);
+						displayEdge(childVertex.getLastParent(), childVertex, " is a tree edge");
+
 					} 
 					else if (childVertex.getColor().equals("black")) {
-						System.out.println(displayEdge(childVertex.getLastParent(), childVertex) + " Ether a forward edge or a cross edge");
+						displayEdge(childVertex.getLastParent(), childVertex, " Ether a forward edge or a cross edge");
 					}
+					stack = depthFirstSearchVisit( childVertex, stack);
 
 				}
 			}
@@ -71,6 +70,7 @@ public class DepthFirstSearchAlgorithm {
 	 * @return			altered version of the input stack: there may be more vertexes added
 	 */
 	public static Stack<Vertex> depthFirstSearchVisit(Vertex vertex, Stack<Vertex> stackInput) {
+		displayVertex(vertex);
 		Stack<Vertex> stack = stackInput;
 		vertex.setColor("grey"); 
 		for (Vertex node: vertex.getAdjacencyList()) {
@@ -80,18 +80,22 @@ public class DepthFirstSearchAlgorithm {
 			}
 			else if (node.getColor().equals("grey")) { 
 				node.addParent(vertex);
-				System.out.println(displayEdge(node.getLastParent(), node) + " is a back edge");	
+				displayEdge(node.getLastParent(), node, " is a back edge");	
 			}
 			else {
 				node.addParent(vertex);
-				System.out.println(displayEdge(node.getLastParent(), node) + " Ether a forward edge or a cross edge");
+				displayEdge(node.getLastParent(), node, " Ether a forward edge or a cross edge");
 			}
 		}
 		vertex.setColor("black");
 		return stack;
 	}
 	
-	private static String displayEdge(Vertex origin, Vertex destination) {
-		return "Edge = " + origin.getValue() + " --> " + destination.getValue();
+	private static void displayEdge(Vertex origin, Vertex destination, String message) {
+		System.out.println( "Edge = " + origin.getValue() + " --> " + destination.getValue() + message);
+	}
+	
+	private static void displayVertex(Vertex vertex) {
+		System.out.println("visiting: " + vertex.getValue());
 	}
 }
