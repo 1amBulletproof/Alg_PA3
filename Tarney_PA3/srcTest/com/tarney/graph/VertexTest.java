@@ -24,14 +24,12 @@ public class VertexTest {
 	static Vertex vertex;
 	static ArrayList<Vertex> adjacencyList;
 	
-	
 	@BeforeClass
 	public static void setup() {
 		adjacencyList = new ArrayList<>();
 		vertex = new Vertex('a', adjacencyList);
 		adjacencyList.add(new Vertex('b'));
 		adjacencyList.add(new Vertex('c'));
-		
 	}
 	
 	@Test
@@ -42,6 +40,14 @@ public class VertexTest {
 	@Test
 	public void testAdjacencyList() {
 		assertEquals(vertex.getAdjacencyList().get(0).getValue(), 'b');
+		assertEquals(vertex.getAdjacencyList().get(1).getValue(), 'c');
+	}
+	
+	@Test
+	public void testColor() {
+		assertEquals(vertex.getColor(), "white");
+		vertex.setColor("black");
+		assertEquals(vertex.getColor(), "black");
 	}
 	
 	

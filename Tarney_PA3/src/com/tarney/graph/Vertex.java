@@ -1,7 +1,15 @@
 /*
  * Represents a generic graph Node or Vertex
  * <p> Node may have variable direct links to other Vertex's</p>
- * <p> Node will have a char 
+ * <p> Node will have a char value</p>
+ * <p> Node will have a color based on whether it has been visited in a depth-first-search:
+ * <ul>
+ * 		<li>white = not yet visited</li>
+ * 		<li>grey = visited but not all adjacent nodes visited</li>
+ * 		<li>black = visited and all adjacent nodes visited</li>
+ * 
+ * @author Brandon Tarney 4/30/2016
+ * @version 1.0
  */
 
 package com.tarney.graph;
@@ -33,7 +41,7 @@ public class Vertex {
 		return adjacenyList;
 	}
 	
-	public void changeColor(String newColor) {
+	public void setColor(String newColor) {
 		this.color = newColor;
 	}
 	
